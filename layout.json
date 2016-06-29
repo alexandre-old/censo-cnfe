@@ -1,0 +1,225 @@
+/* Esse arquivo representa o arquivo Layouts_Download.xls fornecido pelo
+IBGE na seguinte URL:
+     ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/Layout.zip
+*/
+
+// Cada registro representa uma espécie existente no endereço.
+
+/*
+Situação do setor:
+1 = urbano
+2 = rural
+*/
+
+/*
+Espécie de endereço:
+01 = domicílio particular
+02 = domicílio coletivo
+03 = estabeleciemento agropecuário
+04 = estabelecimento de ensino
+05 = estabelecimento de saúde
+06 = estabeleciemento de outras finalidades
+07 = edificação em construção
+*/
+
+/*
+Nulo:
+Campo sem uso
+*/
+
+/*
+Indicador de endereço:
+1 = único
+2 = múltiplo
+*/
+
+/*
+Número da quadra:
+Endereços em áreas não urbanizadas possuem número de quadra = 0
+*/
+
+{
+  "codigo_da_uf": {
+    "posicao_inicial": 3,
+    "tamanho": 5,
+    "categorias": {}
+  },
+  "codigo_do_municipio": {
+    "posicao_inicial": 3,
+    "tamanho": 5,
+    "categorias": {}
+  },
+  "codigo_do_distrito": {
+    "posicao_inicial": 8,
+    "tamanho": 2,
+    "categorias": {}
+  },
+  "codigo_do_subdistrito": {
+    "posicao_inicial": 10,
+    "tamanho": 2,
+    "categorias": {}
+  },
+  "codigo_do_setor": {
+    "posicao_inicial": 12,
+    "tamanho": 4,
+    "categorias": {}
+  },
+  "situacao_do_setor": {
+    "posicao_inicial": 16,
+    "tamanho": 1,
+    "categorias": {}
+  },
+  "tipo_do_logradouro": {
+    "posicao_inicial": 17,
+    "tamanho": 20,
+    "categorias": {}
+  },
+  "titulo_do_logradouro": {
+    "posicao_inicial": 37,
+    "tamanho": 30,
+    "categorias": {}
+  },
+  "nome_do_logradouro": {
+    "posicao_inicial": 67,
+    "tamanho": 60,
+    "categorias": {}
+  },
+  "numero_no_logradouro": {
+    "posicao_inicial": 127,
+    "tamanho": 8,
+    "categorias": {}
+  },
+  "modificador_do_numero": {
+    "posicao_inicial": 135,
+    "tamanho": 7,
+    "categorias": {}
+  },
+  "complemento": {
+      "elemento_1": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "valor_1": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "elemento_2": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "valor_2": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "elemento_3": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "valor_3": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "elemento_4": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "valor_4": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "elemento_5": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "valor_5": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "elemento_6": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      },
+      "valor_6": {
+        "posicao_inicial": 0,
+        "tamanho": 0,
+        "categorias": {}
+      }
+  }
+  "latitude": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {}
+  },
+  "longitude": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {}
+  },
+  "localidade": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {}
+  },
+  "nulo": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {'desc': 'campo sem uso'}
+  },
+  "especie_de_endereco": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {
+        "01": "domicílio particular",
+        "02": "domicílio coletivo",
+        "03": "estabeleciemento agropecuário",
+        "04": "estabelecimento de ensino",
+        "05": "estabelecimento de saúde",
+        "06": "estabeleciemento de outras finalidades",
+        "07": "edificação em construção"
+    }
+  },
+  "identificacao_estabelecimento": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {}
+  },
+  "indicador_de_endereco": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {
+        "1": "unico",
+        "2": "multiplo"
+    }
+  },
+  "identificacao_domicilio_coletivo": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {}
+  },
+  "numero_da_quadra": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {}
+  },
+  "numero_da_face": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {}
+  },
+  "cep": {
+    "posicao_inicial": 0,
+    "tamanho": 0,
+    "categorias": {}
+  }
+}

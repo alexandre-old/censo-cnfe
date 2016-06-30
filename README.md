@@ -1,6 +1,6 @@
-# (Censo 2010) Cadastro Nacional de Endereços para fins estatisticos
+# (Censo 2010) Cadastro Nacional de Endereços
 
-Projeto para parsear e importar [em uma base mongodb] os dados do CNDE do ultimo censo realizado pelo IBGE. O projeto se divide em [basicamente] 2 partes:
+Projeto para parsear e importar [em uma base mongodb] os dados do CNDE do ultimo censo (2010) realizado pelo IBGE. O projeto se divide em [basicamente] 2 partes:
 
 * Parser para gerar uma representação JSON de cada arquivo [.txt]
 * CLI para importar dados para a base dados MongoDB

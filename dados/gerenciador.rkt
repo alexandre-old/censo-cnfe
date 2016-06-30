@@ -4,7 +4,7 @@
 (require racket/cmdline)
 
 (define diretorio (make-parameter #f))
-(define arquvos (make-parameter null))
+(define arquvos (make-parameter '()))
 (define layout (make-parameter "./layouts/layout.json"))
 
 (define importar-dados

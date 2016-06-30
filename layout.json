@@ -96,89 +96,89 @@ Endereços em áreas não urbanizadas possuem número de quadra = 0
   },
   "complemento": {
       "elemento_1": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 142,
+        "tamanho": 20,
         "categorias": {}
       },
       "valor_1": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 162,
+        "tamanho": 10,
         "categorias": {}
       },
       "elemento_2": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 172,
+        "tamanho": 20,
         "categorias": {}
       },
       "valor_2": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 192,
+        "tamanho": 10,
         "categorias": {}
       },
       "elemento_3": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 202,
+        "tamanho": 20,
         "categorias": {}
       },
       "valor_3": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 222,
+        "tamanho": 10,
         "categorias": {}
       },
       "elemento_4": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 232,
+        "tamanho": 20,
         "categorias": {}
       },
       "valor_4": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 252,
+        "tamanho": 10,
         "categorias": {}
       },
       "elemento_5": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 262,
+        "tamanho": 20,
         "categorias": {}
       },
       "valor_5": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 282,
+        "tamanho": 10,
         "categorias": {}
       },
       "elemento_6": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 292,
+        "tamanho": 20,
         "categorias": {}
       },
       "valor_6": {
-        "posicao_inicial": 0,
-        "tamanho": 0,
+        "posicao_inicial": 312,
+        "tamanho": 10,
         "categorias": {}
       }
   }
   "latitude": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 322,
+    "tamanho": 15,
     "categorias": {}
   },
   "longitude": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 337,
+    "tamanho": 15,
     "categorias": {}
   },
   "localidade": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 352,
+    "tamanho": 60,
     "categorias": {}
   },
   "nulo": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 412,
+    "tamanho": 60,
     "categorias": {'desc': 'campo sem uso'}
   },
   "especie_de_endereco": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 472,
+    "tamanho": 2,
     "categorias": {
         "01": "domicílio particular",
         "02": "domicílio coletivo",
@@ -190,36 +190,36 @@ Endereços em áreas não urbanizadas possuem número de quadra = 0
     }
   },
   "identificacao_estabelecimento": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 474,
+    "tamanho": 40,
     "categorias": {}
   },
   "indicador_de_endereco": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 514,
+    "tamanho": 1,
     "categorias": {
         "1": "unico",
         "2": "multiplo"
     }
   },
   "identificacao_domicilio_coletivo": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 515,
+    "tamanho": 30,
     "categorias": {}
   },
   "numero_da_quadra": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 545,
+    "tamanho": 3,
     "categorias": {}
   },
   "numero_da_face": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 548,
+    "tamanho": 3,
     "categorias": {}
   },
   "cep": {
-    "posicao_inicial": 0,
-    "tamanho": 0,
+    "posicao_inicial": 551,
+    "tamanho": 8,
     "categorias": {}
   }
 }

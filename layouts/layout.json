@@ -155,7 +155,7 @@ Endereços em áreas não urbanizadas possuem número de quadra = 0
         "tamanho": 10,
         "categorias": {}
       }
-  }
+  },
   "latitude": {
     "posicao_inicial": 322,
     "tamanho": 15,
@@ -174,7 +174,7 @@ Endereços em áreas não urbanizadas possuem número de quadra = 0
   "nulo": {
     "posicao_inicial": 412,
     "tamanho": 60,
-    "categorias": {'desc': 'campo sem uso'}
+    "categorias": {"desc": "campo sem uso"}
   },
   "especie_de_endereco": {
     "posicao_inicial": 472,

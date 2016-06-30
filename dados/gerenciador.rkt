@@ -7,6 +7,12 @@
 (define arquvos (make-parameter '()))
 (define layout (make-parameter "./layouts/layout.json"))
 
+(define-struct parametros (arquivos diretorio layout))
+;;    #:guard (lambda (arquivos diretorio layout)
+;;              (unless (not (eq? '() arquivos))
+;;                (error "Nenhum arquivo especificado"))
+;;              arquivos diretorio layout))
+
 (define importar-dados
   (command-line
    #:program "importar-dados"
@@ -18,15 +24,15 @@
                          (diretorio #t)]
 
    #:args arquivos
-    arquivos))
+    (parametros arquivos (layout) (diretorio))))
 
 (define (main)
-  (let ((arquivos importar-dados))
-    (if (eq? '() arquivos)
-        (raise-argument-error 'importar-dados "Caminho para arquivos .zip" arquivos)
+  (let ((dados importar-dados))
+    (unless (parametros? dados)
+        (raise-argument-error 'importar-dados "Caminho para arquivos .zip" dados)
         null)
-    (for ([arquivo arquivos])
-      (println arquivo))))
+    (println (parametros-arquivos dados))
+    (println (parametros-diretorio dados))
+    (println (parametros-layout dados))))
 
 (main)
-  

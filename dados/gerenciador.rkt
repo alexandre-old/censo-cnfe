@@ -17,7 +17,7 @@
    [("-d" "--diretorio") "Informa que o caminho especificado é um diretorio com .zips"
                          (diretorio #t)]
 
-   #:args arquivos "Pode ser um ou mais"
+   #:args arquivos
     arquivos))
 
 (define (main)

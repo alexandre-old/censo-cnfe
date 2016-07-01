@@ -12,7 +12,7 @@ A CLI está disponível através do arquivo `manage.py`, os comandos disponívei
 
 # Como preparar o ambiente
 
-* Criar um virtualenv (considerando que você tem o `virtualenvwrapper` instalado):
+* Criar um virtualenv (considerando que você tem o [virtualenvwrapper] (https://gist.github.com/alexandre/a9f9015ac4f05472d98c) instalado:
 ```bash
 mkproject -p $(which python3.5) censo-cnde-parser
 ```

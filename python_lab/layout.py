@@ -7,7 +7,7 @@ from concurrent import futures
 
 
 def gerar_representacao_json():
-    with open('layout.json') as arquivo:
+    with open('./layouts/layout.json') as arquivo:
         return json.load(io.StringIO(''.join(arquivo.readlines())))
 
 
@@ -82,8 +82,6 @@ def obter_dados(linha_nao_processada):
 
 def processar_arquivo(arquivo, max_workers=20):
 
-    dados = []
-
     with futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
 
         with open(arquivo, 'rb') as _arquivo:
@@ -94,6 +92,4 @@ def processar_arquivo(arquivo, max_workers=20):
             ]
 
             for linha_processada in futures.as_completed(linhas_do_arquivo):
-                dados.append(linha_processada.result())
-
-    return dados
+                yield linha_processada.result()

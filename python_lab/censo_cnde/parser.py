@@ -1,21 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import io
 import json
 from concurrent import futures
 
+from censo_cnde.configuracao import LAYOUT_JSON
+
 
 def gerar_representacao_json():
-    with open('./layouts/layout.json') as arquivo:
-        return json.load(io.StringIO(''.join(arquivo.readlines())))
+    with open(LAYOUT_JSON) as arquivo:
+        return json.load(arquivo)
 
 
 class Linha(object):
 
     def __init__(self, linha):
 
-        self._linha = linha  # linha não tratada
+        self._linha = linha.decode('latin1')
         self._arquivo_layout = None
         self._layout = {}
 
@@ -53,18 +54,17 @@ class Linha(object):
         for chave, item in self._layout.items():
 
             if set(item.keys()) != set(['valor', 'categorias']):
-                # Nesse caso o layout tem sub chaves
+
+                dados[chave] = {}
 
                 for sub_chave, sub_item in item.items():
-
-                    if not dados.get(chave):
-                        dados[chave] = {}
 
                     dados[chave][sub_chave] = {
                         'valor': self._linha[sub_item['valor']],
                         'categorias': sub_item['categorias']
                     }
             else:
+
                 dados[chave] = {
                     'valor': self._linha[item['valor']],
                     'categorias': item['categorias']
@@ -80,16 +80,22 @@ def obter_dados(linha_nao_processada):
     return Linha(linha_nao_processada).as_dict()
 
 
-def processar_arquivo(arquivo, max_workers=20):
+def processar_arquivo(arquivo, max_workers=8):
+
+    print('Processando arquivo: {}'.format(arquivo))
+
+    with open(arquivo, 'rb') as _arquivo:
+        linhas_do_arquivo = _arquivo.readlines()
+
+    linhas_processadas = []
 
     with futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
 
-        with open(arquivo, 'rb') as _arquivo:
+        linhas_para_processar = [
+            executor.submit(obter_dados, l) for l in linhas_do_arquivo
+        ]
 
-            linhas_do_arquivo = [
-                executor.submit(obter_dados, arquivo_linha)
-                for arquivo_linha in _arquivo.readlines()
-            ]
+        for linha in futures.as_completed(linhas_para_processar):
+            linhas_processadas.append(linha.result())
 
-            for linha_processada in futures.as_completed(linhas_do_arquivo):
-                yield linha_processada.result()
+    return linhas_processadas

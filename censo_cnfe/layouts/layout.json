@@ -1,0 +1,188 @@
+{
+  "codigo_da_uf": {
+    "posicao_inicial": 1,
+    "tamanho": 2,
+    "categorias": {}
+  },
+  "codigo_do_municipio": {
+    "posicao_inicial": 3,
+    "tamanho": 5,
+    "categorias": {}
+  },
+  "codigo_do_distrito": {
+    "posicao_inicial": 8,
+    "tamanho": 2,
+    "categorias": {}
+  },
+  "codigo_do_subdistrito": {
+    "posicao_inicial": 10,
+    "tamanho": 2,
+    "categorias": {}
+  },
+  "codigo_do_setor": {
+    "posicao_inicial": 12,
+    "tamanho": 4,
+    "categorias": {}
+  },
+  "situacao_do_setor": {
+    "posicao_inicial": 16,
+    "tamanho": 1,
+    "categorias": {
+      "1":"urbano",
+      "2": "rural"
+     }
+  },
+  "tipo_do_logradouro": {
+    "posicao_inicial": 17,
+    "tamanho": 20,
+    "categorias": {}
+  },
+  "titulo_do_logradouro": {
+    "posicao_inicial": 37,
+    "tamanho": 30,
+    "categorias": {}
+  },
+  "nome_do_logradouro": {
+    "posicao_inicial": 67,
+    "tamanho": 60,
+    "categorias": {}
+  },
+  "numero_no_logradouro": {
+    "posicao_inicial": 127,
+    "tamanho": 8,
+    "categorias": {}
+  },
+  "modificador_do_numero": {
+    "posicao_inicial": 135,
+    "tamanho": 7,
+    "categorias": {}
+  },
+  "complemento": {
+      "elemento_1": {
+        "posicao_inicial": 142,
+        "tamanho": 20,
+        "categorias": {}
+      },
+      "valor_1": {
+        "posicao_inicial": 162,
+        "tamanho": 10,
+        "categorias": {}
+      },
+      "elemento_2": {
+        "posicao_inicial": 172,
+        "tamanho": 20,
+        "categorias": {}
+      },
+      "valor_2": {
+        "posicao_inicial": 192,
+        "tamanho": 10,
+        "categorias": {}
+      },
+      "elemento_3": {
+        "posicao_inicial": 202,
+        "tamanho": 20,
+        "categorias": {}
+      },
+      "valor_3": {
+        "posicao_inicial": 222,
+        "tamanho": 10,
+        "categorias": {}
+      },
+      "elemento_4": {
+        "posicao_inicial": 232,
+        "tamanho": 20,
+        "categorias": {}
+      },
+      "valor_4": {
+        "posicao_inicial": 252,
+        "tamanho": 10,
+        "categorias": {}
+      },
+      "elemento_5": {
+        "posicao_inicial": 262,
+        "tamanho": 20,
+        "categorias": {}
+      },
+      "valor_5": {
+        "posicao_inicial": 282,
+        "tamanho": 10,
+        "categorias": {}
+      },
+      "elemento_6": {
+        "posicao_inicial": 292,
+        "tamanho": 20,
+        "categorias": {}
+      },
+      "valor_6": {
+        "posicao_inicial": 312,
+        "tamanho": 10,
+        "categorias": {}
+      }
+  },
+  "latitude": {
+    "posicao_inicial": 322,
+    "tamanho": 15,
+    "categorias": {}
+  },
+  "longitude": {
+    "posicao_inicial": 337,
+    "tamanho": 15,
+    "categorias": {}
+  },
+  "localidade": {
+    "posicao_inicial": 352,
+    "tamanho": 60,
+    "categorias": {}
+  },
+  "nulo": {
+    "posicao_inicial": 412,
+    "tamanho": 60,
+    "categorias": {"desc": "Campo sem uso"}
+  },
+  "especie_de_endereco": {
+    "posicao_inicial": 472,
+    "tamanho": 2,
+    "categorias": {
+        "01": "domicílio particular",
+        "02": "domicílio coletivo",
+        "03": "estabeleciemento agropecuário",
+        "04": "estabelecimento de ensino",
+        "05": "estabelecimento de saúde",
+        "06": "estabeleciemento de outras finalidades",
+        "07": "edificação em construção"
+    }
+  },
+  "identificacao_estabelecimento": {
+    "posicao_inicial": 474,
+    "tamanho": 40,
+    "categorias": {}
+  },
+  "indicador_de_endereco": {
+    "posicao_inicial": 514,
+    "tamanho": 1,
+    "categorias": {
+        "1": "único",
+        "2": "múltiplo"
+    }
+  },
+  "identificacao_domicilio_coletivo": {
+    "posicao_inicial": 515,
+    "tamanho": 30,
+    "categorias": {}
+  },
+  "numero_da_quadra": {
+    "posicao_inicial": 545,
+    "tamanho": 3,
+    "categorias": {}
+  },
+  "numero_da_face": {
+    "posicao_inicial": 548,
+    "tamanho": 3,
+    "categorias": {}
+  },
+  "cep": {
+    "posicao_inicial": 551,
+    "tamanho": 8,
+    "categorias": {}
+  }
+}

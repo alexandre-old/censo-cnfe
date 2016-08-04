@@ -75,7 +75,7 @@ class LineParser:
     def data(self):
 
         for key, categoria, slicing in self._layout:
-            yield key, categoria, self._line[slicing]
+            yield (key, self._line[slicing]), ('categoria', categoria)
 
 
 class FileParser:

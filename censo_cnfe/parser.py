@@ -30,7 +30,7 @@ class Layout:
 
     def __iter__(self):
         for key in self._keys:
-            yield (key, ) + self[key]
+            yield key, self[key]
 
     def __getitem__(self, key):
 
@@ -43,10 +43,9 @@ class Layout:
 
         _item = self._layout[key]
 
-        return _item['categorias'], slice(
-            _item['posicao_inicial'] - 1,
-            _item['posicao_inicial'] + _item['tamanho'] - 1
-        )
+        _range = _item['posicao_inicial'] - 1, _item['tamanho'] - 1
+
+        return slice(_range[0], _range[0] + _range[1])
 
     def _set_base_layout(self, layout):
 
@@ -73,16 +72,15 @@ class LineParser:
 
     @property
     def data(self):
-
-        for key, categoria, slicing in self._layout:
-            yield (key, self._line[slicing]), ('categoria', categoria)
+        for key, _slice in self._layout:
+            yield key, self._line[_slice]
 
 
 class FileParser:
 
-    def __init__(self, file_like):
+    def __init__(self, file):
 
-        self._file = file_like
+        self._file = file
         self._layout = Layout()
 
     @property
@@ -98,4 +96,4 @@ class FileParser:
                 yield line.result()
 
     def parse_line(self, line):
-        return tuple(x for x in LineParser(line, self._layout).data)
+        return tuple(item for item in LineParser(line, self._layout).data)

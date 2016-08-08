@@ -12,7 +12,7 @@ class Dataset:
 
     @property
     def file(self):
-        with open(self.filepath) as f:
+        with open(self.filepath, 'rb') as f:
             return f.readlines()
 
     @property

@@ -8,7 +8,7 @@ class Dataset:
     def __init__(self, filepath):
 
         self.filepath = filepath
-        self.data = parser.FileParser(self.file)
+        self._data = parser.FileParser(self.file)
 
     @property
     def file(self):
@@ -21,7 +21,7 @@ class Dataset:
 
     @property
     def lines(self):
-        raise NotImplementedError('Subclasses should implement this')
+        yield from self._data.lines
 
     def export(self):
         raise NotImplementedError('Subclasses should implement this')
@@ -29,10 +29,5 @@ class Dataset:
 
 class JSON(Dataset):
 
-    @property
-    def lines(self):
-        for line in self.data.lines:
-            yield dict(line)
-
     def export(self):
-        return json.dumps(list(self.lines))
+        return json.dumps([dict(line) for line in self.lines])

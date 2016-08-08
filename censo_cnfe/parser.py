@@ -67,7 +67,7 @@ class LineParser:
 
     def __init__(self, raw_line, layout):
 
-        self._line = raw_line
+        self._line = raw_line.decode('latin-1')
         self._layout = layout
 
     @property

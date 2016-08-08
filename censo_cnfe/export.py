@@ -16,18 +16,28 @@ class Dataset:
             return f.readlines()
 
     @property
-    def headers(self):
-        return self.data._layout._keys
-
-    @property
     def lines(self):
-        yield from self._data.lines
+        return self._data.lines
 
     def export(self):
+        raise NotImplementedError('Subclasses should implement this')
+
+    def export_to_file(self):
         raise NotImplementedError('Subclasses should implement this')
 
 
 class JSON(Dataset):
 
+    @property
+    def _as_dict(self):
+        for line in self.lines:
+            yield dict(line)
+
     def export(self):
-        return json.dumps([dict(line) for line in self.lines])
+        yield from json.dumps(list(self._as_dict), indent=4)
+
+    def export_to_file(self, output):
+
+        with open(output, 'w') as f:
+            for chunk in self.export():
+                f.write(chunk)

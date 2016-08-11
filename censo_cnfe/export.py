@@ -13,7 +13,7 @@ class Dataset:
 
     @property
     def content(self):
-        return self._stream.readlines()
+        yield from self._stream
 
     @property
     def lines(self):

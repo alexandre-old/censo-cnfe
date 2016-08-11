@@ -5,15 +5,15 @@ from censo_cnfe import parser
 
 class Dataset:
 
-    def __init__(self, filepath):
+    def __init__(self, stream):
 
-        self.filepath = filepath
-        self._data = parser.FileParser(self.file)
+        self._stream = stream
+
+        self._data = parser.FileParser(self.content)
 
     @property
-    def file(self):
-        with open(self.filepath, 'rb') as f:
-            return f.readlines()
+    def content(self):
+        return self._stream.readlines()
 
     @property
     def lines(self):
@@ -37,6 +37,10 @@ class JSON(Dataset):
         yield from json.dumps(list(self._as_dict), indent=4)
 
     def export_to_file(self, output):
+
+        if not output.lower().endswith('.json'):
+
+            output = '{}.json'.format(output)
 
         with open(output, 'w') as f:
             for chunk in self.export():

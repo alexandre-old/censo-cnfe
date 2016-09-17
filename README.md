@@ -1,4 +1,5 @@
-# censo-cnfe
+CENSO-CNFE PARSER E CLI
+=======================
 
 Projeto para parsear os dados do diretório [CNFE](ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/) do [último censo](ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/).
 
@@ -18,6 +19,21 @@ arquivos .zip e arquivos .TXT (os formatos disponíveis no site/ftp do IBGE).
 Para exportar os dados para os DBs disponíveis, você deve utilizar o arquivos `settings.json`
 correspondente disponível no diretório `settings/` (e.g. `settings/mongodb.json`).
 
+```bash
+
+(censo-cnfe) o0x41e@incdev ~/Development/python/censo-cnfe (master)
+ ~>./manage.py
+Usage: manage.py [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  export-to-couchdb
+  export-to-json
+  export-to-mongodb
+```
+
 ### Exportar para arquivo
 
 Por enquanto o único formato disponível é o formado JSON.
@@ -25,7 +41,8 @@ Por enquanto o único formato disponível é o formado JSON.
 #### Exemplos
 
 ```bash
-TODO: comando
+(censo-cnfe) o0x41e@incdev ~/Development/python/censo-cnfe (master)
+~>./manage.py export-to-json ~/Documents/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/SP/ ~/Documents/censo-cnfe/SP/
 ```
 
 ### Exportar para uma base de dados MongoDB
@@ -33,7 +50,8 @@ TODO: comando
 #### Exemplos
 
 ```bash
-TODO: comando
+(censo-cnfe) o0x41e@incdev ~/Development/python/censo-cnfe (master)
+~>./manage.py export-to-mongodb ~/Documents/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/SP/ settings/mongodb.json
 ```
 
 ### Exportar para uma base de dados CouchDB
@@ -41,7 +59,8 @@ TODO: comando
 #### Exemplos
 
 ```bash
-TODO: comando
+(censo-cnfe) o0x41e@incdev ~/Development/python/censo-cnfe (master)
+~>./manage.py export-to-couchdb ~/Documents/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/SP/ settings/couchdb.json
 ```
 
 ## Performance
@@ -77,7 +96,7 @@ Esse projeto utiliza a licença [GPLv3](https://en.wikipedia.org/wiki/GNU_Genera
 
 ## Instalação do projeto
 
-_Considere utilizar a versão mais recente do Python3 (e.g. Python3.5.1)_
+_Considere utilizar a versão mais recente do Python3._
 
 * Copiar o repositório: `git clone https://github.com/alexandre/censo-cnfe`
 * Criar um vrtualenv: `mkproject -p $(which python3) censo-cnfe`

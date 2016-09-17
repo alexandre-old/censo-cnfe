@@ -1,7 +1,7 @@
 CENSO-CNFE PARSER E CLI
 =======================
 
-Projeto para parsear os dados do diretório [CNFE](ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/) do [último censo](ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/).
+Projeto para parsear os dados do diretório [CNFE](ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/) do [último censo](ftp.ibge.gov.br/Censos/Censo_Demografico_2010/).
 
 Esse projeto ainda é bem experimental (sim, funciona). Colabore com pull requests e issues =]
 

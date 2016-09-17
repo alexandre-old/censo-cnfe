@@ -1,47 +1,14 @@
 #!/usr/bin/env python
 
-import io
+import json
 import os
 import zipfile
 
 import click
 
+from censo_cnfe import db as db_handlers
 from censo_cnfe import export as _export
-
-
-def get_all_text_files(dir_zip_or_text_file):
-
-    # TODO: Refactoring...Make it work -> make it right -> make it fast
-
-    if os.path.isdir(dir_zip_or_text_file):
-
-        _dir = dir_zip_or_text_file  # just a shorter name
-
-        for item in os.listdir(_dir):
-
-            if not item.lower().endswith('.zip'):
-                continue
-
-            zfile = zipfile.ZipFile(os.path.join(_dir, item))
-
-            for textfile in zfile.namelist():
-                yield textfile.split('.')[0], io.BytesIO(zfile.read(textfile))
-
-    elif zipfile.is_zipfile(dir_zip_or_text_file):
-
-        zfile = zipfile.ZipFile(dir_zip_or_text_file)
-
-        for textfile in zfile.namelist():
-            yield textfile.split('.')[0], io.BytesIO(zfile.read(textfile))
-
-    else:
-
-        file_name = dir_zip_or_text_file  # yet another shorther name
-
-        with open(dir_zip_or_text_file, 'rb') as f:
-            textfile = io.BytesIO(f.read())
-
-        yield file_name, textfile
+from censo_cnfe import utils
 
 
 @click.group()
@@ -67,7 +34,7 @@ def export_to_json(cnfe_file, output):
     else:
         output_is_dir = False
 
-    for file_name, _file in get_all_text_files(cnfe_file):
+    for file_name, _file in utils.get_all_text_files(cnfe_file):
 
         click.echo('\n Parsing file: {!r}'.format(file_name))
 
@@ -81,6 +48,50 @@ def export_to_json(cnfe_file, output):
         click.echo('Created file: {!r}.json'.format(file_name))
 
     click.echo('\n Ok, Done!\n')
+
+
+@export.command(name='export-to-couchdb')
+@click.argument('cnfe_file_dir', type=click.Path(exists=True, dir_okay=True))
+@click.argument('settings', type=click.Path(exists=True))
+def export_to_couchdb(cnfe_file_dir, settings):
+
+    with open(settings) as _settings:
+        settings = json.loads(_settings.read())
+
+    couchdb = db_handlers.CouchDB(settings)
+
+    for file_name, _file in utils.get_all_text_files(cnfe_file_dir):
+
+        click.echo('\n Parsing file: {!r}'.format(file_name))
+
+        data = _export.DB(_file)
+
+        data.export(couchdb)
+
+        click.echo('Saved {!r} into couchdb'.format(file_name))
+
+
+@export.command(name='export-to-mongodb')
+@click.argument('cnfe_file_dir', type=click.Path(exists=True, dir_okay=True))
+@click.argument('settings', type=click.Path(exists=True))
+def export_to_mongodb(cnfe_file_dir, settings):
+
+    with open(settings) as _settings:
+        settings = json.loads(_settings.read())
+
+    collection = list(filter(None, cnfe_file_dir.split('/')))[-1]
+
+    mongodb = db_handlers.MongoDB(settings, collection=collection)
+
+    for file_name, _file in utils.get_all_text_files(cnfe_file_dir):
+
+        click.echo('\n Parsing file: {!r}'.format(file_name))
+
+        data = _export.DB(_file)
+
+        data.export(mongodb)
+
+        click.echo('Saved {!r} into mongodb'.format(file_name))
 
 
 if __name__ == '__main__':

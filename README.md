@@ -11,6 +11,15 @@ Para utilizar esse projeto é necessário baixar os dados diretamente do site/ft
 Se você tiver algum problema para baixar esses dados e/ou quiser apenas a base de dados
 processados, eu posso tentar ajudar. (abra uma issue)
 
+## Layouts
+
+Para facilitar o processo, eu criei um arquivo `layout.json` com o mesmo conteúdo do `Layout.xls`
+fornecido pelo IBGE.
+
+Durante parsing, a chave `categorias` não é adicionada. Eu não estou muito certo a respeito dessa
+decisão, mas eu acredito que essas informação devem ficar separadas por serem algo mais próximo a
+um metada dado do que conteúdo dos arquivos processados.
+
 ## A CLI (command line interface)
 
 A CLI permite exportar dados para arquivos ou DBs. A versão atual sabe lidar com diretórios,

@@ -1,5 +1,6 @@
 import json
 
+from censo_cnfe import db as db_handlers
 from censo_cnfe import parser
 
 
@@ -45,3 +46,14 @@ class JSON(Dataset):
         with open(output, 'w') as f:
             for chunk in self.export():
                 f.write(chunk)
+
+
+class DB(Dataset):
+
+    @property
+    def _as_dict(self):
+        for line in self.lines:
+            yield dict(line)
+
+    def export(self, db):
+        db_handlers.save(db, self._as_dict)

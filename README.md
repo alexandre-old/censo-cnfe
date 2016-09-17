@@ -2,6 +2,8 @@
 
 Projeto para parsear os dados do diretório [CNFE](ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/) do [último censo](ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/).
 
+Esse projeto ainda é bem experimental (sim, funciona). Colabore com pull requests e issues =]
+
 ## Sobre os dados
 
 Para utilizar esse projeto é necessário baixar os dados diretamente do site/ftp do IBGE.

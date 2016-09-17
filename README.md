@@ -19,6 +19,21 @@ arquivos .zip e arquivos .TXT (os formatos disponíveis no site/ftp do IBGE).
 Para exportar os dados para os DBs disponíveis, você deve utilizar o arquivos `settings.json`
 correspondente disponível no diretório `settings/` (e.g. `settings/mongodb.json`).
 
+```bash
+
+(censo-cnfe) o0x41e@incdev ~/Development/python/censo-cnfe (master)
+ ~>./manage.py
+Usage: manage.py [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  export-to-couchdb
+  export-to-json
+  export-to-mongodb
+```
+
 ### Exportar para arquivo
 
 Por enquanto o único formato disponível é o formado JSON.
@@ -26,7 +41,8 @@ Por enquanto o único formato disponível é o formado JSON.
 #### Exemplos
 
 ```bash
-TODO: comando
+(censo-cnfe) o0x41e@incdev ~/Development/python/censo-cnfe (master)
+~>./manage.py export-to-json ~/Documents/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/SP/ ~/Documents/censo-cnfe/SP/
 ```
 
 ### Exportar para uma base de dados MongoDB
@@ -34,7 +50,8 @@ TODO: comando
 #### Exemplos
 
 ```bash
-TODO: comando
+(censo-cnfe) o0x41e@incdev ~/Development/python/censo-cnfe (master)
+~>./manage.py export-to-mongodb ~/Documents/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/SP/ settings/mongodb.json
 ```
 
 ### Exportar para uma base de dados CouchDB
@@ -42,7 +59,8 @@ TODO: comando
 #### Exemplos
 
 ```bash
-TODO: comando
+(censo-cnfe) o0x41e@incdev ~/Development/python/censo-cnfe (master)
+~>./manage.py export-to-couchdb ~/Documents/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/SP/ settings/couchdb.json
 ```
 
 ## Performance

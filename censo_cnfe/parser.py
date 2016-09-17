@@ -39,6 +39,8 @@ class Layout:
 
         if '__' in key:
 
+            logger.debug('[Layout][__getitem__] Chave {!r} contém __.')
+
             # Considerando apenas 2 níveis porque é o necessário para a versão
             # atual.
             _base_key, _sub_key = key.split('__')
@@ -47,6 +49,7 @@ class Layout:
 
         _item = self._layout[key]
 
+        # No layout a posição inicial começa em 1 e não 0.
         _range = _item['posicao_inicial'] - 1, _item['tamanho'] - 1
 
         return slice(_range[0], _range[0] + _range[1])
@@ -56,6 +59,13 @@ class Layout:
         for key, value in layout.items():
 
             if not value.get('tamanho'):
+
+                # Utilizar um outro objeto Layout para lidar com profundidade.
+
+                logger.debug(
+                    "[Layout][_set_base_layout] Item {!r} não tem chave "
+                    "'tamanho'".format(value)
+                )
 
                 self._keys += list(
                     '{}__{}'.format(key, sub) for sub in layout[key]

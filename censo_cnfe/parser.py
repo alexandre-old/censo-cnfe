@@ -1,7 +1,10 @@
+import logging
 import json
 import os
 from concurrent.futures import as_completed, ThreadPoolExecutor
 
+
+logger = logging.getLogger(__name__)
 
 DEFAULT_LAYOUT_PATH = os.path.join(
     os.path.abspath('.'),
@@ -36,7 +39,8 @@ class Layout:
 
         if '__' in key:
 
-            # FIXME: Only two levels of depth is considered
+            # Considerando apenas 2 níveis porque é o necessário para a versão
+            # atual.
             _base_key, _sub_key = key.split('__')
 
             return self._layout[_base_key][_sub_key]

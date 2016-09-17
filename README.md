@@ -77,7 +77,7 @@ Esse projeto utiliza a licença [GPLv3](https://en.wikipedia.org/wiki/GNU_Genera
 
 ## Instalação do projeto
 
-_Considere utilizar a versão mais recente do Python3 (e.g. Python3.5.1)_
+_Considere utilizar a versão mais recente do Python3._
 
 * Copiar o repositório: `git clone https://github.com/alexandre/censo-cnfe`
 * Criar um vrtualenv: `mkproject -p $(which python3) censo-cnfe`

@@ -1,0 +1,6 @@
+{
+    "host": "localhost",
+    "port": 27017,
+    "db": "censo-2010-cnfe",
+    "collection": "censo-2010-cnfe"
+}

@@ -14,7 +14,10 @@ DEFAULT_LAYOUT_PATH = os.path.join(
 
 def get_layout_json():
 
-    '''Returns the default layout json content'''
+    '''Obter conteúdo do layout.json
+
+    :returns: dict object
+    '''
 
     with open(DEFAULT_LAYOUT_PATH) as f:
         return json.load(f)
@@ -22,7 +25,7 @@ def get_layout_json():
 
 class Layout:
 
-    '''Object that represents the layout specified by the IBGE '''
+    '''Representaçao do layout definido pelo IBGE. '''
 
     def __init__(self, layout=None):
 
